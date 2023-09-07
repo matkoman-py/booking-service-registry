@@ -51,8 +51,8 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t ${{ env.DOCKERHUB_USERNAME }}/service-registry:latest .
+          docker build -t ${{ env.DOCKERHUB_USERNAME }}/service-registry:${{github.run_number}} .
 
 
       - name: Publish Docker Image
-        run: docker push ${{ env.DOCKERHUB_USERNAME }}/service-registry:latest
+        run: docker push ${{ env.DOCKERHUB_USERNAME }}/service-registry:${{github.run_number}}
